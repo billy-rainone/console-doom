@@ -447,7 +447,7 @@ public:
 		}
 	};
 
-	void DrawSprite(int x, int y, olcSprite *sprite)
+	void DrawSprite(int x, int y, gengineSprite *sprite)
 	{
 		if (sprite == nullptr)
 			return;
@@ -462,7 +462,7 @@ public:
 		}
 	}
 
-	void DrawPartialSprite(int x, int y, olcSprite *sprite, int ox, int oy, int w, int h)
+	void DrawPartialSprite(int x, int y, gengineSprite *sprite, int ox, int oy, int w, int h)
 	{
 		if (sprite == nullptr)
 			return;
@@ -517,7 +517,7 @@ public:
 		}
 	}
 
-	~olcConsoleGameEngine()
+	~gengineConsoleGameEngine()
 	{
 		SetConsoleActiveScreenBuffer(m_hOriginalConsole);
 		delete[] m_bufScreen;
@@ -529,7 +529,7 @@ public:
 		m_bAtomActive = true;
 
 		// Star the thread
-		thread t = thread(&olcConsoleGameEngine::GameThread, this);
+		thread t = thread(gengineConsoleGameEngine::GameThread, this);
 
 		// Wait for thread to be exited
 		t.join();
@@ -637,7 +637,7 @@ private:
 
 					default:
 						break;
-						// We don't care just at the moment
+						// in future..
 					}
 				}
 
@@ -770,6 +770,6 @@ protected:
 	static mutex m_muxGame;
 };
 
-atomic<bool> olcConsoleGameEngine::m_bAtomActive = false;
-condition_variable olcConsoleGameEngine::m_cvGameFinished;
-mutex olcConsoleGameEngine::m_muxGame;
+atomic<bool> gengineConsoleGameEngine::m_bAtomActive = false;
+condition_variable gengineConsoleGameEngine::m_cvGameFinished;
+mutex gengineConsoleGameEngine::m_muxGame;
