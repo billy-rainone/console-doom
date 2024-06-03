@@ -76,9 +76,9 @@ protected:
 		map += L"#..............................#";
 		map += L"################################";
 
-		spriteWall = new gengineSprite(L"FPSSprites/fps_wall1.spr");
-		spriteLamp = new gengineSprite(L"FPSSprites/fps_lamp1.spr");
-		spriteFireBall = new gengineSprite(L"FPSSprites/fps_fireball1.spr");
+		spriteWall = new gengineSprite(L"/bin/fps_wall1.spr");
+		spriteLamp = new gengineSprite(L"/bin/fps_lamp1.spr");
+		spriteFireBall = new gengineSprite(L"/bin/fps_fireball1.spr");
 		fDepthBuffer = new float[ScreenWidth()];
 
 		listObjects = {
