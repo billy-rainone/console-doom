@@ -63,20 +63,20 @@ enum PIXEL_TYPE
 	PIXEL_QUARTER = 0x2591,
 };
 
-class olcSprite
+class gengineSprite
 {
 public:
-	olcSprite()
+	gengineSprite()
 	{
 
 	}
 
-	olcSprite(int w, int h)
+	gengineSprite(int w, int h)
 	{
 		Create(w, h);
 	}
 
-	olcSprite(wstring sFile)
+	gengineSprite(wstring sFile)
 	{
 		if (!Load(sFile))
 			Create(8, 8);
@@ -199,10 +199,10 @@ public:
 };
 
 
-class olcConsoleGameEngine
+class gengineConsoleGameEngine
 {
 public:
-	olcConsoleGameEngine()
+	gengineConsoleGameEngine()
 	{
 		m_nScreenWidth = 50;
 		m_nScreenHeight = 20;
