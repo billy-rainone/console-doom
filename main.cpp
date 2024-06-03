@@ -3,11 +3,11 @@
 #include <string>
 using namespace std;
 
-#include "olcConsoleGameEngine.h"
+#include "gengineConsoleGameEngine.h"
 
-class OneLoneCoder_UltimateFPS : public olcConsoleGameEngine {
+class gengine_UltimateFPS : public gengineConsoleGameEngine {
 public:
-	OneLoneCoder_UltimateFPS() {
+	gengine_UltimateFPS() {
 		m_sAppName = L"Kind of Wolfenstein";
 	}
 
@@ -23,10 +23,10 @@ private:
 	float fSpeed = 5.0f;			   // Walking Speed
 	wstring map;
 
-	olcSprite *spriteWall;
-	olcSprite *spriteLamp;
-	olcSprite *spriteFireBall;
-	// olcSprite *spriteBadGuy;
+	gengineSprite *spriteWall;
+	gengineSprite *spriteLamp;
+	gengineSprite *spriteFireBall;
+	// gengineSprite *spriteBadGuy;
 
 	float *fDepthBuffer = nullptr;
 
@@ -36,7 +36,7 @@ private:
 		float vx;
 		float vy;
 		bool bRemove;
-		olcSprite *sprite;
+		gengineSprite *sprite;
 	};
 
 	list<sObject> listObjects;
@@ -76,9 +76,9 @@ protected:
 		map += L"#..............................#";
 		map += L"################################";
 
-		spriteWall = new olcSprite(L"FPSSprites/fps_wall1.spr");
-		spriteLamp = new olcSprite(L"FPSSprites/fps_lamp1.spr");
-		spriteFireBall = new olcSprite(L"FPSSprites/fps_fireball1.spr");
+		spriteWall = new gengineSprite(L"FPSSprites/fps_wall1.spr");
+		spriteLamp = new gengineSprite(L"FPSSprites/fps_lamp1.spr");
+		spriteFireBall = new gengineSprite(L"FPSSprites/fps_fireball1.spr");
 		fDepthBuffer = new float[ScreenWidth()];
 
 		listObjects = {
@@ -344,7 +344,7 @@ protected:
 };
 
 int main() {
-	OneLoneCoder_UltimateFPS game;
+	gengine_UltimateFPS game;
 	game.ConstructConsole(320, 240, 2, 2);
 	game.Start();
 	return 0;
